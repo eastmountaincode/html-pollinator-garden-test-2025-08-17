@@ -1,7 +1,7 @@
 <?php
 $target_dir = "file-storage/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOK = 1;
+$uploadOk = 1;
 
 if ($_FILES['fileToUpload']['size'] > 26214400) {
     echo "File too large";
