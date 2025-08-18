@@ -1,0 +1,17 @@
+body {
+    font-family: 'Times New Roman';
+    font-weight: 400;
+}
+
+.library-box {
+    border: 1px solid black;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    cursor: pointer;
+}
