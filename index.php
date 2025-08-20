@@ -17,7 +17,7 @@
         </form>
         <?php 
             $dir = 'file-storage/box1';
-            echo $dir;
+            echo "<p>$dir<p>";
         ?>
 
     </div>
