@@ -9,7 +9,7 @@
 
 <body>
     <div id="box1" class="library-box">
-        <h1>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</h1>
+        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required>
             <input type="hidden" name="box" value="box1">
