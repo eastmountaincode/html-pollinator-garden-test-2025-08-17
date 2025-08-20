@@ -16,8 +16,20 @@
             <input style="width: 100px" type="submit">
         </form>
         <?php 
-            $dir = 'file-storage/box1';
-            echo "<p>dirname: $dir<p>";
+            $dir = 'file-storage/box1'; //define the directory name
+            $file = null; // initialize file variable, this is like creating an empty container for our file
+            $files = glob($dir . '*'); // get every file in the directory (there should only be one)
+            if ($files) {
+                $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath        
+            }
+
+            if ($file) {
+                echo '<p>file in box1: $file</p>';
+            } else {
+                echo '<p>empty</p>';
+            }
+
+            
         ?>
 
     </div>
