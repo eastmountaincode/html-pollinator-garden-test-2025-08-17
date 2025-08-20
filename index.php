@@ -10,7 +10,7 @@
 <body>
     <div id="box1" class="library-box">
         <h1>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</h1>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container">
+        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload">
             <input type="hidden" name="box" value="box1">
             <input style="width: 100px" type="submit">
@@ -34,3 +34,16 @@
 
     </div>
 </body>
+
+<script>
+function checkSize(form) {
+    const f = form.fileToUpload.files[0];
+    if (!f) return true;
+    const MAX = 25 * 1024 * 1024; // 25 MB
+    if (f.size > MAX) {
+        alert("File too large (max 25 MB).");
+        return false; // stop submission
+    }
+    return true;
+}
+</script>
