@@ -12,13 +12,13 @@
         <h1>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</h1>
         <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container">
             <input type="file" name="fileToUpload">
-            <input type="hidden" name="box" value="box">
+            <input type="hidden" name="box" value="box1">
             <input style="width: 100px" type="submit">
         </form>
         <?php 
             $dir = 'file-storage/box1'; //define the directory name
             $file = null; // initialize file variable, this is like creating an empty container for our file
-            $files = glob($dir . '*'); // get every file in the directory (there should only be one)
+            $files = glob($dir . '/*'); // get every file in the directory (there should only be one)
             if ($files) {
                 $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath        
             }

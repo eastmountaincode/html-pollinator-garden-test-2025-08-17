@@ -1,7 +1,7 @@
 <?php
-$target_dir = "file-storage/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $target_box = $_POST["box"];
+$target_dir = "file-storage/$target_box/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 
 if ($_FILES['fileToUpload']['size'] > 26214400) {
