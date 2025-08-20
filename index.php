@@ -24,9 +24,9 @@
             }
 
             if ($file) {
-                echo '<p>file in box1: $file</p>';
+                echo "<p>file in box1: $file</p>";
             } else {
-                echo '<p>empty</p>';
+                echo "<p>empty</p>";
             }
 
             
