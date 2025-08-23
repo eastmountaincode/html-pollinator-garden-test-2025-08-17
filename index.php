@@ -124,7 +124,7 @@
                 }
             }
         ?>
-        <marquee class="marquee-header" scrollamount="6">Which part comes first?</marquee>
+        <marquee class="marquee-header" scrollamount="2">Fallow does the night</marquee>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull3; ?>>
             <br>
