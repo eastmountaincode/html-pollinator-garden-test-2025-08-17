@@ -22,14 +22,12 @@
             if ($files) {
                 $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath        
             }
-
+            
             if ($file) {
                 echo "<p>file in box1: $file</p>";
             } else {
                 echo "<p>empty</p>";
             }
-
-            
         ?>
 
     </div>
