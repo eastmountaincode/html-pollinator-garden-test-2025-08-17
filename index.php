@@ -16,26 +16,33 @@
             if ($files) {
                 $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath   
                 if ($file) {
-                    $disabledBoxFull1 = "disabled";  // file already exists
+                    $disabledUploadBoxFull1 = "disabled";  // file already exists, don't allow upload
+                    $disabledDownloadBoxEmpty1 = ""; // there is a file, allow download
                 }   
                 else {
-                    $disabledBoxFull1 = "";
+                    $disabledUploadBoxFull1 = ""; // no file, allow upload
+                    $disabledDownloadBoxEmpty1 = "disabled"; // no file, don't allow download
                 }     
             }
         ?>
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull1; ?>>
+            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledUploadBoxFull1; ?>>
             <input type="hidden" name="box" value="box1">
-            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull1; ?>>
+            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
+        <?php if ($file): ?>
+            <a href="file-storage/box1/<?php echo urlencode($file); ?>" download>
+                <button type="button">Download</button>
+            </a>
+        <?php else: ?>
+            <button type="button" disabled>Download</button>
+        <?php endif; ?>
         <?php
             if ($file) {
                 echo "<p class='boxFullIndicator'>file in box1: $file</p>";
-                $disabledBoxFull1 = "disabled";  // file already exists
             } else {
                 echo "<p class='boxFullIndicator'>empty</p>";
-                $disabledBoxFull1 = "";          // allow upload
             }
         ?>
         
@@ -49,27 +56,35 @@
             if ($files) {
                 $file = basename($files[0]);   
                 if ($file) {
-                    $disabledBoxFull2 = "disabled";  // file already exists
+                    $disabledUploadBoxFull2 = "disabled";  // file already exists
+                    $disabledDownloadBoxEmpty2 = "";
+
                 }   
                 else {
-                    $disabledBoxFull2 = "";
+                    $disabledUploadBoxFull2 = "";
+                    $disabledDownloadBoxEmpty2 = "disabled";
                 }
             }
         ?>
         <marquee>I don't know what comes first.</marquee>
         <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull2; ?>>
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledUploadBoxFull2; ?>>
             <input type="hidden" name="box" value="box2">
-            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull2; ?>>
+            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
+        <?php if ($file): ?>
+            <a href="file-storage/box2/<?php echo urlencode($file); ?>" download>
+                <button type="button">Download</button>
+            </a>
+        <?php else: ?>
+            <button type="button" disabled>Download</button>
+        <?php endif; ?>
         <?php
         if ($file) {
                 echo "<p class='boxFullIndicator'>file in box2: $file</p>";
-                $disabledBoxFull2 = "disabled";  // file already exists
 
             } else {
                 echo "<p class='boxFullIndicator'>box2: empty</p>";
-                $disabledBoxFull2 = "";
             }
         ?>
         
