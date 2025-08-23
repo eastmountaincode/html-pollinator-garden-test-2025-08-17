@@ -31,17 +31,40 @@
         ?>
 
     </div>
+    <div id="box2" class="library-box">
+        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+            <input type="file" name="fileToUpload" required>
+            <input type="hidden" name="box" value="box2">
+            <input style="width: 100px" type="submit">
+        </form>
+        <?php 
+            $dir = 'file-storage/box2';
+            $file = null;
+            $files = glob($dir . '/*'); 
+            if ($files) {
+                $file = basename($files[0]);      
+            }
+            
+            if ($file) {
+                echo "<p>file in box2: $file</p>";
+            } else {
+                echo "<p>empty</p>";
+            }
+        ?>
+
+    </div>
 </body>
 
 <script>
-function checkSize(form) {
-    const f = form.fileToUpload.files[0];
-    if (!f) return true;
-    const MAX = 25 * 1024 * 1024; // 25 MB
-    if (f.size > MAX) {
-        alert("File too large (max 25 MB).");
-        return false; // stop submission
+    function checkSize(form) {
+        const f = form.fileToUpload.files[0];
+        if (!f) return true;
+        const MAX = 25 * 1024 * 1024; // 25 MB
+        if (f.size > MAX) {
+            alert("File too large (max 25 MB).");
+            return false; // stop submission
+        }
+        return true;
     }
-    return true;
-}
 </script>
