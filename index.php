@@ -14,15 +14,13 @@
             $file = null; // initialize file variable, this is like creating an empty container for our file
             $files = glob($dir . '/*'); // get every file in the directory (there should only be one)
             if ($files) {
-                $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath        
-            }
-            
-            if ($file) {
-                echo "<p>file in box1: $file</p>";
-                $disabledBoxFull1 = "disabled";  // file already exists
-            } else {
-                echo "<p>empty</p>";
-                $disabledBoxFull1 = "";          // allow upload
+                $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath   
+                if ($file) {
+                    $disabledBoxFull1 = "disabled";  // file already exists
+                }   
+                else {
+                    $disabledBoxFull1 = "";
+                }     
             }
         ?>
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
@@ -31,6 +29,15 @@
             <input type="hidden" name="box" value="box1">
             <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull1; ?>>
         </form>
+        <?php
+            if ($file) {
+                echo "<p>file in box1: $file</p>";
+                $disabledBoxFull1 = "disabled";  // file already exists
+            } else {
+                echo "<p>empty</p>";
+                $disabledBoxFull1 = "";          // allow upload
+            }
+        ?>
         
 
     </div>
