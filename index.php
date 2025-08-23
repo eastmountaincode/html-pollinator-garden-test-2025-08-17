@@ -31,10 +31,10 @@
         </form>
         <?php
             if ($file) {
-                echo "<p>file in box1: $file</p>";
+                echo "<p class='boxFullIndicator'>file in box1: $file</p>";
                 $disabledBoxFull1 = "disabled";  // file already exists
             } else {
-                echo "<p>empty</p>";
+                echo "<p class='boxFullIndicator'>empty</p>";
                 $disabledBoxFull1 = "";          // allow upload
             }
         ?>
@@ -64,11 +64,11 @@
         </form>
         <?php
         if ($file) {
-                echo "<p>file in box2: $file</p>";
+                echo "<p class='boxFullIndicator'>file in box2: $file</p>";
                 $disabledBoxFull2 = "disabled";  // file already exists
 
             } else {
-                echo "<p>box2: empty</p>";
+                echo "<p class='boxFullIndicator'>box2: empty</p>";
                 $disabledBoxFull2 = "";
             }
         ?>

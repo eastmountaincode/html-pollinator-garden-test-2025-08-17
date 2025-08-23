@@ -26,3 +26,7 @@ body {
 .center {
     margin: auto;
 }
+
+.boxFullIndicator {
+    margin: 10px 0px;
+}
