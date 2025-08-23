@@ -30,16 +30,16 @@
         <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
             <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
             <input type="hidden" name="box" value="box1">
-            <input id="submitBtn1" style="width: auto; display: inline-block" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
+            <input id="submitBtn1" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
 
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box1">
-                <button type="submit">Download</button>
+                <button type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button type="button" disabled>Download</button>
+            <button type="button" disabled>Receive</button>
         <?php endif; ?>
 
         <?php
@@ -80,10 +80,10 @@
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box2">
-                <button type="submit">Download</button>
+                <button type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button type="button" disabled>Download</button>
+            <button type="button" disabled>Receive</button>
         <?php endif; ?>
         <?php
         if ($file) {
