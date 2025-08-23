@@ -13,6 +13,8 @@
         <?php 
             $dir = 'file-storage/box1'; //define the directory name
             $file = null; // initialize file variable, this is like creating an empty container for our file
+            $disabledUploadBoxFull1 = "";
+            $disabledDownloadBoxEmpty1 = "disabled";
             $files = glob($dir . '/*'); // get every file in the directory (there should only be one)
             if ($files) {
                 $file = basename($files[0]); // get the first item in the "files" variable. the basename() function gets ONLY the filename, excluding the rest of the filepath   
@@ -58,6 +60,8 @@
         <?php 
             $dir = 'file-storage/box2';
             $file = null;
+            $disabledUploadBoxFull2 = "";
+            $disabledDownloadBoxEmpty2 = "disabled";
             $files = glob($dir . '/*'); 
             if ($files) {
                 $file = basename($files[0]);   
