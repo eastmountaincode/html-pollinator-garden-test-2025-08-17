@@ -8,6 +8,7 @@
     <div style="text-align: center">
         <h2>HTML Pollinator Garden</h2>
     </div>
+    <!-- BOX 1 -->
     <div id="box1" class="library-box">
         <?php 
             $dir = 'file-storage/box1'; //define the directory name
@@ -27,9 +28,9 @@
         ?>
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledUploadBoxFull1; ?>>
+            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
             <input type="hidden" name="box" value="box1">
-            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
+            <input id="submitBtn1" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
 
         <?php if ($file): ?>
@@ -51,6 +52,7 @@
         
 
     </div>
+    <!-- BOX 2 -->
     <div id="box2" class="library-box library-box-not-top">
         <?php 
             $dir = 'file-storage/box2';
@@ -71,9 +73,9 @@
         ?>
         <marquee>I don't know what comes first.</marquee>
         <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledUploadBoxFull2; ?>>
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
             <input type="hidden" name="box" value="box2">
-            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull2; ?>>
+            <input id="submitBtn" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
@@ -108,8 +110,8 @@
         return true;
     }
 
-    function toggleButton(fileInput) {
-        const button = document.getElementById("submitBtn");
+    function toggleButton(fileInput, buttonId) {
+        const button = document.getElementById(buttonId);
         button.disabled = fileInput.files.length === 0;
     }
 </script>
