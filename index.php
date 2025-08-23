@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <div style="text-align: center">
+    <div style="text-align: center" class="main-header">
         <h2>HTML Pollinator Garden</h2>
     </div>
     <!-- BOX 1 -->
@@ -28,21 +28,21 @@
                 }     
             }
         ?>
-        <marquee class="marquee-header">Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <marquee class="marquee-header" scrollamount="4">Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" onsubmit="return checkSize(this)">
             <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
             <br>
             <input type="hidden" name="box" value="box1">
-            <input id="submitBtn1" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull1; ?>>
+            <input style="margin-top: 5px" id="submitBtn1" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
 
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box1">
-                <button class='receive-button' type="submit">Receive</button>
+                <button style="margin-top: 5px" class='receive-button' type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button class='receive-button' type="button" disabled>Receive</button>
+            <button style="margin-top: 5px" class='receive-button' type="button" disabled>Receive</button>
         <?php endif; ?>
 
         <?php
@@ -76,20 +76,20 @@
                 }
             }
         ?>
-        <marquee class="marquee-header">I don't know what comes first.</marquee>
+        <marquee class="marquee-header" scrollamount="6">Which part comes first?</marquee>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
             <br>
             <input type="hidden" name="box" value="box2">
-            <input id="submitBtn2" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull2; ?>>
+            <input style="margin-top: 5px" id="submitBtn2" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box2">
-                <button class='receive-button' type="submit">Receive</button>
+                <button style="margin-top: 5px" class='receive-button' type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button class='receive-button' type="button" disabled>Receive</button>
+            <button style="margin-top: 5px" class='receive-button' type="button" disabled>Receive</button>
         <?php endif; ?>
         <?php
         if ($file) {
@@ -97,6 +97,54 @@
 
             } else {
                 echo "<p class='boxFullIndicator'>box2: empty</p>";
+            }
+        ?>
+        
+
+    </div>
+
+    <!-- BOX 3 -->
+    <div id="box3" class="library-box library-box-not-top">
+        <?php 
+            $dir = 'file-storage/box3';
+            $file = null;
+            $disabledUploadBoxFull3 = "";
+            $disabledDownloadBoxEmpty3 = "disabled";
+            $files = glob($dir . '/*'); 
+            if ($files) {
+                $file = basename($files[0]);   
+                if ($file) {
+                    $disabledUploadBoxFull3 = "disabled";  // file already exists
+                    $disabledDownloadBoxEmpty3 = "";
+
+                }   
+                else {
+                    $disabledUploadBoxFull3 = "";
+                    $disabledDownloadBoxEmpty3 = "disabled";
+                }
+            }
+        ?>
+        <marquee class="marquee-header" scrollamount="6">Which part comes first?</marquee>
+        <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull3; ?>>
+            <br>
+            <input type="hidden" name="box" value="box3">
+            <input style="margin-top: 5px" id="submitBtn2" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull3; ?>>
+        </form>
+        <?php if ($file): ?>
+            <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
+                <input type="hidden" name="box" value="box3">
+                <button style="margin-top: 5px" class='receive-button' type="submit">Receive</button>
+            </form>
+        <?php else: ?>
+            <button style="margin-top: 5px" class='receive-button' type="button" disabled>Receive</button>
+        <?php endif; ?>
+        <?php
+        if ($file) {
+                echo "<p class='boxFullIndicator'>file in box3: $file</p>";
+
+            } else {
+                echo "<p class='boxFullIndicator'>box3: empty</p>";
             }
         ?>
         
