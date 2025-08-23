@@ -28,8 +28,8 @@
                 }     
             }
         ?>
-        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" onsubmit="return checkSize(this)">
+        <marquee class="marquee-header">Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" onsubmit="return checkSize(this)">
             <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
             <br>
             <input type="hidden" name="box" value="box1">
@@ -39,10 +39,10 @@
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box1">
-                <button type="submit">Receive</button>
+                <button class='receive-button' type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button type="button" disabled>Receive</button>
+            <button class='receive-button' type="button" disabled>Receive</button>
         <?php endif; ?>
 
         <?php
@@ -76,8 +76,8 @@
                 }
             }
         ?>
-        <marquee>I don't know what comes first.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
+        <marquee class="marquee-header">I don't know what comes first.</marquee>
+        <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
             <br>
             <input type="hidden" name="box" value="box2">
@@ -86,10 +86,10 @@
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
                 <input type="hidden" name="box" value="box2">
-                <button type="submit">Receive</button>
+                <button class='receive-button' type="submit">Receive</button>
             </form>
         <?php else: ?>
-            <button type="button" disabled>Receive</button>
+            <button class='receive-button' type="button" disabled>Receive</button>
         <?php endif; ?>
         <?php
         if ($file) {

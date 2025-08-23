@@ -7,16 +7,10 @@ body {
     border: 1px solid black;
     margin: auto;
     max-width: 500px;
-    padding: 5px 10px
 }
 
 .library-box-not-top {
     margin-top: 10px;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .input {
@@ -28,5 +22,18 @@ body {
 }
 
 .boxFullIndicator {
+    margin: 11px 10px;
+}
+
+.marquee-header {
     margin: 10px 0px;
+    margin-bottom: 7px;
+}
+
+.library-form {
+    margin: 0px 10px;
+}
+
+.receive-button {
+    margin: 0px 10px;
 }
