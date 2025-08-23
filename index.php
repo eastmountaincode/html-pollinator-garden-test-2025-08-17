@@ -9,12 +9,6 @@
         <h2>HTML Pollinator Garden</h2>
     </div>
     <div id="box1" class="library-box">
-        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull1; ?>>
-            <input type="hidden" name="box" value="box1">
-            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull1; ?>>
-        </form>
         <?php 
             $dir = 'file-storage/box1'; //define the directory name
             $file = null; // initialize file variable, this is like creating an empty container for our file
@@ -31,15 +25,16 @@
                 $disabledBoxFull1 = "";          // allow upload
             }
         ?>
+        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull1; ?>>
+            <input type="hidden" name="box" value="box1">
+            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull1; ?>>
+        </form>
+        
 
     </div>
     <div id="box2" class="library-box library-box-not-top">
-        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull2; ?>>
-            <input type="hidden" name="box" value="box2">
-            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull2; ?>>
-        </form>
         <?php 
             $dir = 'file-storage/box2';
             $file = null;
@@ -57,6 +52,13 @@
                 $disabledBoxFull2 = "";
             }
         ?>
+        <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull2; ?>>
+            <input type="hidden" name="box" value="box2">
+            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull2; ?>>
+        </form>
+        
 
     </div>
 </body>
