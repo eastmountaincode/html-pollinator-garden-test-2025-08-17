@@ -31,13 +31,16 @@
             <input type="hidden" name="box" value="box1">
             <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
+
         <?php if ($file): ?>
-            <a href="file-storage/box1/<?php echo urlencode($file); ?>" download>
-                <button type="button">Download</button>
-            </a>
+            <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
+                <input type="hidden" name="box" value="box1">
+                <button type="submit">Download</button>
+            </form>
         <?php else: ?>
             <button type="button" disabled>Download</button>
         <?php endif; ?>
+
         <?php
             if ($file) {
                 echo "<p class='boxFullIndicator'>file in box1: $file</p>";
@@ -73,9 +76,10 @@
             <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
         <?php if ($file): ?>
-            <a href="file-storage/box2/<?php echo urlencode($file); ?>" download>
-                <button type="button">Download</button>
-            </a>
+            <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
+                <input type="hidden" name="box" value="box2">
+                <button type="submit">Download</button>
+            </form>
         <?php else: ?>
             <button type="button" disabled>Download</button>
         <?php endif; ?>
