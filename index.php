@@ -11,7 +11,7 @@
     <div id="box1" class="library-box">
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)">
+            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull; ?>>
             <input type="hidden" name="box" value="box1">
             <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull; ?>>
         </form>
@@ -36,7 +36,7 @@
     <div id="box2" class="library-box library-box-not-top">
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
         <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required onchange="toggleButton(this)">
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this)" <?php echo $disabledBoxFull; ?>>
             <input type="hidden" name="box" value="box2">
             <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull; ?>>
         </form>
