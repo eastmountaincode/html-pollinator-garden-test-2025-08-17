@@ -27,8 +27,9 @@
             }
         ?>
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+        <form action="/upload_file.php" method="post" enctype="multipart/form-data" onsubmit="return checkSize(this)">
             <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
+            <br>
             <input type="hidden" name="box" value="box1">
             <input id="submitBtn1" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull1; ?>>
         </form>
@@ -72,8 +73,9 @@
             }
         ?>
         <marquee>I don't know what comes first.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
+            <br>
             <input type="hidden" name="box" value="box2">
             <input id="submitBtn" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
