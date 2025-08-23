@@ -45,7 +45,7 @@
             if ($file) {
                 echo "<p class='boxFullIndicator'>file in box1: $file</p>";
             } else {
-                echo "<p class='boxFullIndicator'>empty</p>";
+                echo "<p class='boxFullIndicator'>box1: empty</p>";
             }
         ?>
         
