@@ -2,18 +2,18 @@
 
 <head>
     <link rel="stylesheet" href="./stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div style="text-align: center">
+        <h2>HTML Pollinator Garden</h2>
+    </div>
     <div id="box1" class="library-box">
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required>
+        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+            <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this)">
             <input type="hidden" name="box" value="box1">
-            <input style="width: 100px" type="submit">
+            <input id="submitBtn1" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull; ?>>
         </form>
         <?php 
             $dir = 'file-storage/box1'; //define the directory name
@@ -25,18 +25,20 @@
             
             if ($file) {
                 echo "<p>file in box1: $file</p>";
+                $disabledBoxFull = "disabled";  // file already exists
             } else {
                 echo "<p>empty</p>";
+                $disabledBoxFull = "";          // allow upload
             }
         ?>
 
     </div>
-    <div id="box2" class="library-box">
+    <div id="box2" class="library-box library-box-not-top">
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
-        <form action="/upload_file.php" method="post" enctype="multipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required>
+        <form action="/upload_file.php" method="post" enctype="musltipart/form-data" class="flex-container" onsubmit="return checkSize(this)">
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this)">
             <input type="hidden" name="box" value="box2">
-            <input style="width: 100px" type="submit">
+            <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull; ?>>
         </form>
         <?php 
             $dir = 'file-storage/box2';
@@ -48,8 +50,11 @@
             
             if ($file) {
                 echo "<p>file in box2: $file</p>";
+                $disabledBoxFull = "disabled";  // file already exists
+
             } else {
-                echo "<p>empty</p>";
+                echo "<p>box2: empty</p>";
+                $disabledBoxFull = "";
             }
         ?>
 
@@ -66,5 +71,10 @@
             return false; // stop submission
         }
         return true;
+    }
+
+    function toggleButton(fileInput) {
+        const button = document.getElementById("submitBtn");
+        button.disabled = fileInput.files.length === 0;
     }
 </script>

@@ -5,6 +5,13 @@ body {
 
 .library-box {
     border: 1px solid black;
+    margin: auto;
+    max-width: 500px;
+    padding: 5px 10px
+}
+
+.library-box-not-top {
+    margin-top: 10px;
 }
 
 .flex-container {
@@ -14,4 +21,8 @@ body {
 
 .input {
     cursor: pointer;
+}
+
+.center {
+    margin: auto;
 }
