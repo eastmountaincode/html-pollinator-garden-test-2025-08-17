@@ -40,16 +40,13 @@
             $file = null;
             $files = glob($dir . '/*'); 
             if ($files) {
-                $file = basename($files[0]);      
-            }
-            
-            if ($file) {
-                echo "<p>file in box2: $file</p>";
-                $disabledBoxFull2 = "disabled";  // file already exists
-
-            } else {
-                echo "<p>box2: empty</p>";
-                $disabledBoxFull2 = "";
+                $file = basename($files[0]);   
+                if ($file) {
+                    $disabledBoxFull2 = "disabled";  // file already exists
+                }   
+                else {
+                    $disabledBoxFull2 = "";
+                }
             }
         ?>
         <marquee>Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
@@ -58,6 +55,16 @@
             <input type="hidden" name="box" value="box2">
             <input id="submitBtn" style="width: 100px" type="submit" value="Upload" disabled <?php echo $disabledBoxFull2; ?>>
         </form>
+        <?php
+        if ($file) {
+                echo "<p>file in box2: $file</p>";
+                $disabledBoxFull2 = "disabled";  // file already exists
+
+            } else {
+                echo "<p>box2: empty</p>";
+                $disabledBoxFull2 = "";
+            }
+        ?>
         
 
     </div>
