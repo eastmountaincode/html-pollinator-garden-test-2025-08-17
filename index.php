@@ -81,7 +81,7 @@
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
             <br>
             <input type="hidden" name="box" value="box2">
-            <input id="submitBtn" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull2; ?>>
+            <input id="submitBtn2" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull2; ?>>
         </form>
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
