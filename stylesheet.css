@@ -5,9 +5,11 @@ body {
 
 .library-box {
     border: 1px solid black;
-    margin: auto;
+    margin: 0 auto;     /* always 20px on left & right */
     max-width: 500px;
     box-shadow: 10px 10px;
+    width: min(100% - 40px, 500px);    /* full width minus 20px each side, or 500px max */
+
 }
 
 .library-box-not-top {
@@ -46,4 +48,11 @@ input {
 
 button {
     cursor: pointer;
+}
+
+.header-mobile { display: none; }
+
+@media (max-width: 600px) {
+  .header-desktop { display: none; }
+  .header-mobile { display: block; }
 }
