@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <div style="text-align: center" class="main-header">
+    <div style="text-align: center; margin: 20px 20px" class="main-header">
         <h2 class='header-desktop'>✿ ❀ ❁ ❃ ❋ HTML Pollinator Garden ❋ ❃ ❁ ❀ ✿</h2>
         <h2 class='header-mobile'>✿ ❀ ❁ ❃ ❋ <br>HTML Pollinator Garden <br>❋ ❃ ❁ ❀ ✿</h2>
 
@@ -152,7 +152,7 @@
         
 
     </div>
-    <div style="margin-top: 50px; text-align: center">
+    <div style="text-align: center; margin: 40px 20px">
         <details>
             <summary style="cursor: pointer; user-select: none">About</summary>
             <p>A pollinator garden includes plants that are favorable to pollinators - these plant produce plenty of nectar and pollen.</p>
