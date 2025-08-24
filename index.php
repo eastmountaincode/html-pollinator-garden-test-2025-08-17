@@ -6,8 +6,8 @@
 
 <body>
     <div style="text-align: center" class="main-header">
-        <h2 class='header-desktop'>✿ ❀ ❁ ❃ ❋ HTML Pollinator Garden ✿ ❀ ❁ ❃ ❋</h2>
-        <h2 class='header-mobile'>✿ ❀ ❁ ❃ ❋ <br>HTML Pollinator Garden <br>✿ ❀ ❁ ❃ ❋</h2>
+        <h2 class='header-desktop'>✿ ❀ ❁ ❃ ❋ HTML Pollinator Garden ❋ ❃ ❁ ❀ ✿</h2>
+        <h2 class='header-mobile'>✿ ❀ ❁ ❃ ❋ <br>HTML Pollinator Garden <br>❋ ❃ ❁ ❀ ✿</h2>
 
     </div>
     <!-- BOX 1 -->
