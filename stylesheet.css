@@ -29,8 +29,8 @@ body {
 }
 
 .marquee-header {
-    margin: 10px 0px;
-    margin-bottom: 7px;
+    flex: 1;
+    display: block;
 
 }
 
@@ -55,4 +55,17 @@ button {
     max-width: min(100% - 40px, 400px);
     margin: 40px auto;
 
+}
+
+.library-box-number {
+    font-weight: 900;
+    margin: 10px 10px;
+    margin-bottom: 7px;
+    font-size: 40px
+
+}
+
+.library-box-header {
+    display: flex;
+    align-items: center;
 }

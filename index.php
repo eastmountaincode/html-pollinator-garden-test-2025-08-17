@@ -5,7 +5,9 @@
 </head>
 
 <body>
-    <div style="text-align: center; margin: 30px 20px" class="main-header">
+    <?php include "header.html" ?>
+
+    <div style="text-align: center; margin: 20px 20px" class="main-header">
         <h2>✿ ❀ ❁ ❃ ❋ <br>HTML Pollinator Garden <br>❋ ❃ ❁ ❀ ✿</h2>
     </div>
 
@@ -29,7 +31,10 @@
                 }     
             }
         ?>
-        <marquee class="marquee-header" scrollamount="4">Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        <div class='library-box-header'>
+            <p class='library-box-number'>1</p>
+            <marquee class="marquee-header" scrollamount="4">Braids of grain spin wildly; a room with no walls is collecting, pooling in the mirror. A spigot becomes available.</marquee>
+        </div>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" onsubmit="return checkSize(this)">
             <input id="fileInput1" type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn1')" <?php echo $disabledUploadBoxFull1; ?>>
             <br>
@@ -78,7 +83,10 @@
                 }
             }
         ?>
-        <marquee class="marquee-header" scrollamount="6">Which part comes first?</marquee>
+        <div class='library-box-header'>
+            <p class='library-box-number'>2</p>
+            <marquee class="marquee-header" scrollamount="6">Which part comes first?</marquee>
+        </div>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull2; ?>>
             <br>
@@ -126,7 +134,10 @@
                 }
             }
         ?>
-        <marquee class="marquee-header" scrollamount="2">Fallow does the night</marquee>
+        <div class='library-box-header'>
+            <p class='library-box-number'>3</p>
+            <marquee class="marquee-header" scrollamount="2">Fallow does the night</marquee>
+        </div>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
             <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn3')" <?php echo $disabledUploadBoxFull3; ?>>
             <br>
@@ -149,8 +160,6 @@
                 echo "<p class='boxFullIndicator'>box3: empty</p>";
             }
         ?>
-        
-
     </div>
 
     <div class='about-footer'>
