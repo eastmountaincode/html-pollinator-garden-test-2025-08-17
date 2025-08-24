@@ -128,10 +128,10 @@
         ?>
         <marquee class="marquee-header" scrollamount="2">Fallow does the night</marquee>
         <form class='library-form' action="/upload_file.php" method="post" enctype="multipart/form-data" class="" onsubmit="return checkSize(this)">
-            <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn2')" <?php echo $disabledUploadBoxFull3; ?>>
+            <input type="file" name="fileToUpload" required onchange="toggleButton(this, 'submitBtn3')" <?php echo $disabledUploadBoxFull3; ?>>
             <br>
             <input type="hidden" name="box" value="box3">
-            <input style="margin-top: 5px" id="submitBtn2" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull3; ?>>
+            <input style="margin-top: 5px" id="submitBtn3" type="submit" value="Offer" disabled <?php echo $disabledUploadBoxFull3; ?>>
         </form>
         <?php if ($file): ?>
             <form action="download_file.php" method="get" target="_blank" onsubmit="setTimeout(()=>location.reload(), 2000)">
@@ -151,6 +151,12 @@
         ?>
         
 
+    </div>
+    <div style="margin-top: 50px; text-align: center">
+        <details>
+            <summary style="cursor: pointer; user-select: none">About</summary>
+            <p>A pollinator garden includes plants that are favorable to pollinators - these plant produce plenty of nectar and pollen.</p>
+        </details>
     </div>
 </body>
 
